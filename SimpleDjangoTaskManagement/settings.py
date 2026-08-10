@@ -29,7 +29,8 @@ if 'PYTHONPATH' in os.environ:
 
     SECRET_KEY = os.environ['SECRET_KEY']
 
-    ALLOWED_HOSTS = ['.ap-southeast-2.elasticbeanstalk.com']
+    #ALLOWED_HOSTS = ['.ap-southeast-2.elasticbeanstalk.com']
+    ALLOWED_HOSTS = ['*']
 else:
     DEBUG = True
 
@@ -103,7 +104,7 @@ else:
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'simpledjangotasks_db',
             'USER': 'postgres',
-            'PASSWORD': 'Cellfone01', #Put in the password to your local pgadmin
+            'PASSWORD': 'Cellfone01', #Put in the password to your local pgadmin for this line
             'HOST': 'localhost',
             'PORT': '5432',
         }
