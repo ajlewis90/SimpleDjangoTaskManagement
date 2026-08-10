@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Task Manager{% endblock %} | Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="{% url 'tasks:task_list' %}" class="brand">
+                <span class="brand-mark">&#9745;</span>
+                <span class="brand-text">Task Manager</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="{% url 'tasks:task_list' %}">All tasks</a>
+                <a href="{% url 'tasks:task_create' %}" class="btn btn-primary btn-small">New task</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="message message-{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>Task Manager, a small Django project for keeping track of things that need doing.</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

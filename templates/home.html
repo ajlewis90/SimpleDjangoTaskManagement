@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<section class="auth-card">
+    <h1>Task Manager</h1>
+    <p class="muted">
+        A small, honest to-do list. Add a task, set a priority and a due
+        date, and mark it off once it is done.
+    </p>
+    <a href="{% url 'tasks:task_list' %}" class="btn btn-primary btn-large">View all tasks</a>
+
+    
+</section>
+{% endblock %}
