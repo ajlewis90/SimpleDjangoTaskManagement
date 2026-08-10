@@ -29,8 +29,8 @@ if 'PYTHONPATH' in os.environ:
 
     SECRET_KEY = os.environ['SECRET_KEY']
 
-    #ALLOWED_HOSTS = ['.ap-southeast-2.elasticbeanstalk.com']
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['.ap-southeast-2.elasticbeanstalk.com', '.ap-southeast-2.elasticbeanstalk.com.' ]
+    #ALLOWED_HOSTS = ['*']
 else:
     DEBUG = True
 
