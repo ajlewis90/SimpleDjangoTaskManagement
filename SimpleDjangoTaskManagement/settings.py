@@ -29,8 +29,7 @@ if 'PYTHONPATH' in os.environ:
 
     SECRET_KEY = os.environ['SECRET_KEY']
 
-    ALLOWED_HOSTS = ['.ap-southeast-2.elasticbeanstalk.com', '.ap-southeast-2.elasticbeanstalk.com.' ]
-    #ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['.ap-southeast-2.elasticbeanstalk.com', '.ap-southeast-2.elasticbeanstalk.com.']
 else:
     DEBUG = True
 
@@ -135,7 +134,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Pacific/Auckland'
 
 USE_I18N = True
 
