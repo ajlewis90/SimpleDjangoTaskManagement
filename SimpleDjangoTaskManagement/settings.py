@@ -153,6 +153,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 if 'S3_BUCKET' in os.environ:
+    print("HERE???")
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     
@@ -176,6 +177,7 @@ if 'S3_BUCKET' in os.environ:
     STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)    
 
 else:
+    print("OR HERE???")
     STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
