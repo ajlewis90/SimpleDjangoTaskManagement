@@ -160,8 +160,10 @@ if 'S3_BUCKET' in os.environ:
     AWS_S3_REGION_NAME = os.environ['AWS_S3_REGION_NAME']
 
     AWS_DEFAULT_ACL = None
+    CLOUDFRONT_DOMAIN='d3vp67erbrjynk.cloudfront.net'
 
-    AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_S3_REGION_NAME)
+    #AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_S3_REGION_NAME)
+    AWS_S3_CUSTOM_DOMAIN = CLOUDFRONT_DOMAIN
     AWS_S3_OBJECT_PARAMETERS = {
        'CacheControl': 'max-age=86400',
     }
